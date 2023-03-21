@@ -1,0 +1,160 @@
+@use './colors' as c;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Opens Sans', sans-serif;
+	min-height: 86vh;
+	background-image: url('../images/bg-mobile.svg');
+	background-repeat: no-repeat;
+	background-color: c.$violet;
+}
+
+.logo {
+	margin: 1rem 0 1rem 3rem;
+
+	&__logo-img {
+		width: 150px;
+		height: 80px;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&__main-img {
+		width: 100%;
+		padding: 0 3rem;
+	}
+
+	.info {
+		margin-top: 3rem;
+
+		&__heading {
+			font-size: 2.4rem;
+			font-family: 'Poppins', sans-serif;
+			margin: 2rem 3rem;
+			color: c.$white;
+		}
+
+		&__description {
+			font-size: 1.6rem;
+			margin: 0 4rem;
+			line-height: 24px;
+			color: c.$d-white;
+		}
+
+		&__register-btn {
+			margin: 2rem 0 6rem;
+			padding: 1rem 7rem;
+			border-radius: 2rem;
+			border: none;
+			color: c.$violet;
+			box-shadow: 0 0 8px rgb(56, 54, 54);
+			transition: color 0.3s, background-color 0.3s;
+			cursor: pointer;
+		}
+
+		&__register-btn:hover {
+			color: c.$white;
+			background-color: c.$s-magenta;
+		}
+	}
+
+	.socials {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		font-size: 1.6rem;
+		color: c.$white;
+
+		&__icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid c.$white;
+			border-radius: 50%;
+			padding: 0.5rem;
+			width: 30px;
+			transition: color 0.3s, border 0.3s;
+			cursor: pointer;
+		}
+
+		&__icon:hover {
+			color: c.$s-magenta;
+			border: 1px solid c.$s-magenta;
+		}
+	}
+}
+
+footer {
+	margin-top: 3rem;
+}
+
+@media (min-width: 1440px) {
+	body {
+		background-image: url('../images/bg-desktop.svg');
+		background-size: cover;
+	}
+
+	.logo {
+		margin: 2rem 0 4rem 6rem;
+
+		&__logo-img {
+			width: 200px;
+			height: 100px;
+		}
+	}
+
+	.container {
+		flex-direction: row;
+		align-items: flex-start;
+		text-align: left;
+
+		&__main-img {
+			width: 50%;
+			margin-left: 3rem;
+		}
+
+		.info {
+			&__heading {
+				font-size: 3.2rem;
+				max-width: 40%;
+			}
+
+			&__description {
+				max-width: 41%;
+				margin: 0 3rem;
+			}
+
+			&__register-btn {
+				padding: 1.4rem 6rem;
+				margin-left: 3rem;
+			}
+		}
+
+		.socials {
+			margin-top: 20rem;
+			margin-right: 26rem;
+		}
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
+		margin-top: 8rem;
+	}
+}
